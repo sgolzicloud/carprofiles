@@ -1,17 +1,18 @@
 /* ============================================
-   CSS Variables & Theme
+   CSS Variables & Modern Bright Theme
    ============================================ */
 :root {
-    --primary-color: #e74c3c;      /* Red/primary accent */
-    --secondary-color: #2c3e50;    /* Dark blue/header */
-    --accent-color: #3498db;       /* Light blue accents */
-    --text-dark: #2c3e50;
-    --text-light: #7f8c8d;
-    --bg-light: #ecf0f1;
-    --bg-white: #ffffff;
-    --border-color: #bdc3c7;
-    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.15);
+    --primary-color: #1a1a1a;       /* Dark text */
+    --secondary-color: #f5f5f5;     /* Light background */
+    --accent-color: #ff6b35;        /* Vibrant orange accent */
+    --text-dark: #1a1a1a;
+    --text-light: #666666;
+    --bg-light: #ffffff;
+    --bg-very-light: #f9f9f9;
+    --border-color: #e0e0e0;
+    --shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --spacing: 1.5rem;
 }
 
 /* ============================================
@@ -28,9 +29,9 @@ html {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
     color: var(--text-dark);
-    background-color: var(--bg-light);
+    background-color: var(--secondary-color);
     line-height: 1.6;
 }
 
@@ -38,73 +39,38 @@ body {
    Typography
    ============================================ */
 h1 {
-    font-size: clamp(1.8rem, 5vw, 3rem);
+    font-size: clamp(2.2rem, 6vw, 3.5rem);
     font-weight: 700;
     margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
 }
 
 h2 {
-    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-size: clamp(1.5rem, 4vw, 2rem);
     font-weight: 700;
     margin-bottom: 1.5rem;
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 h3 {
-    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
+    color: var(--primary-color);
 }
 
 p {
-    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    font-size: clamp(0.95rem, 2vw, 1rem);
     color: var(--text-light);
     margin-bottom: 1rem;
+    line-height: 1.7;
 }
 
 /* ============================================
-   Header
-   ============================================ */
-.header {
-    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
-    color: white;
-    padding: clamp(2rem, 5vw, 4rem) 1rem;
-    box-shadow: var(--shadow-lg);
-}
-
-.header-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.header h1 {
-    color: white;
-    margin-bottom: 0.5rem;
-}
-
-.header p {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: clamp(0.9rem, 2vw, 1rem);
-}
-
-.back-link {
-    display: inline-block;
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
-    transition: color 0.3s ease;
-}
-
-.back-link:hover {
-    color: white;
-}
-
-/* ============================================
-   Container
+   Container & Layout
    ============================================ */
 .container {
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
     padding: clamp(1.5rem, 4vw, 3rem) 1rem;
 }
@@ -112,373 +78,198 @@ p {
 /* ============================================
    Buttons
    ============================================ */
-.btn,
-.btn-view {
+.btn {
     display: inline-block;
-    padding: clamp(0.6rem, 1vw, 0.85rem) clamp(1.2rem, 3vw, 2rem);
-    background-color: var(--primary-color);
+    padding: clamp(0.75rem, 1.5vw, 1rem) clamp(1.5rem, 3vw, 2.5rem);
+    background-color: var(--accent-color);
     color: white;
     text-decoration: none;
     border: none;
-    border-radius: 6px;
-    font-size: clamp(0.9rem, 2vw, 1rem);
+    border-radius: 8px;
+    font-size: clamp(0.95rem, 2vw, 1rem);
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: var(--shadow);
 }
 
-.btn:hover,
-.btn-view:hover {
-    background-color: #c0392b;
+.btn:hover {
+    background-color: #e55a24;
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
 }
 
-.btn:active,
-.btn-view:active {
+.btn:active {
     transform: translateY(0);
-}
-
-/* ============================================
-   Home Page - Hero Section
-   ============================================ */
-.hero {
-    background: white;
-    padding: clamp(2rem, 5vw, 3rem);
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.hero h2 {
-    color: var(--primary-color);
-}
-
-.hero p {
-    color: var(--text-light);
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* ============================================
-   Cars Section - Grid Layout
-   ============================================ */
-.cars-section {
-    margin-bottom: 3rem;
-}
-
-.cars-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(clamp(280px, 45vw, 350px), 1fr));
-    gap: clamp(1.5rem, 4vw, 2rem);
-}
-
-.car-card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: all 0.3s ease;
-}
-
-.car-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
-}
-
-.car-card-link {
-    text-decoration: none;
-    display: block;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.car-card-image {
-    position: relative;
-    width: 100%;
-    padding-bottom: 66.66%; /* 3:2 aspect ratio */
-    background-size: cover;
-    background-position: center;
-    background-color: var(--bg-light);
-}
-
-.car-year {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 0.4rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-}
-
-.car-card-content {
-    padding: clamp(1.2rem, 3vw, 1.5rem);
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-}
-
-.car-card-content h3 {
-    margin-bottom: 0.5rem;
-    color: var(--secondary-color);
-    margin-top: 0;
-}
-
-.car-card-content p {
-    font-size: 0.9rem;
-    color: var(--text-light);
-    margin-bottom: 1rem;
-    flex-grow: 1;
-}
-
-.car-specs {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1.2rem;
-    flex-wrap: wrap;
-}
-
-.spec {
-    font-size: 0.85rem;
-    color: var(--accent-color);
-    font-weight: 500;
-}
-
-.btn-view {
-    margin-top: auto;
-    width: 100%;
-    text-align: center;
-}
-
-/* ============================================
-   Info Section
-   ============================================ */
-.info-section {
-    margin-top: 3rem;
-}
-
-.info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(clamp(250px, 45vw, 300px), 1fr));
-    gap: clamp(1.5rem, 4vw, 2rem);
-}
-
-.info-card {
-    background: white;
-    padding: clamp(1.5rem, 3vw, 2rem);
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-    text-align: center;
-    transition: all 0.3s ease;
-}
-
-.info-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-}
-
-.info-card h3 {
-    color: var(--primary-color);
-    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-}
-
-.info-card p {
-    color: var(--text-light);
-    margin-bottom: 0;
 }
 
 /* ============================================
    Profile Page Layout
    ============================================ */
 .profile-content {
-    background: white;
-    border-radius: 12px;
+    background: var(--bg-light);
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-lg);
 }
 
-.profile-hero {
-    position: relative;
-    width: 100%;
-    padding-bottom: 50%;
-    background-size: cover;
-    background-position: center;
-    background-color: var(--bg-light);
-}
-
+/* Profile Header Section */
 .profile-header {
-    padding: clamp(1.5rem, 4vw, 2.5rem);
-    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
-    color: white;
+    padding: clamp(2rem, 5vw, 3.5rem);
+    background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
+    border-bottom: 2px solid var(--border-color);
 }
 
 .profile-header h1 {
-    color: white;
-    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
 }
 
-.profile-meta {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    margin-top: 1.5rem;
-    font-size: 0.95rem;
-}
-
-.meta-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.profile-description {
-    padding: clamp(1.5rem, 4vw, 2.5rem);
-}
-
-.profile-description p {
-    font-size: clamp(0.95rem, 2vw, 1.1rem);
-    color: var(--text-dark);
-}
-
-/* ============================================
-   Specs Section
-   ============================================ */
-.specs-section {
-    padding: clamp(1.5rem, 4vw, 2.5rem);
-    border-top: 1px solid var(--border-color);
-}
-
-.specs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 40vw, 220px), 1fr));
-    gap: clamp(1.5rem, 4vw, 2rem);
-}
-
-.spec-card {
-    background: var(--bg-light);
-    padding: clamp(1.2rem, 3vw, 1.5rem);
-    border-radius: 8px;
-    text-align: center;
-}
-
-.spec-card h3 {
-    font-size: clamp(0.9rem, 2vw, 1rem);
+.profile-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
     color: var(--text-light);
     font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+/* Profile Info Grid */
+.profile-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 40vw, 220px), 1fr));
+    gap: clamp(1.5rem, 3vw, 2rem);
+    margin-top: 2rem;
+}
+
+.info-item {
+    background: var(--bg-very-light);
+    padding: clamp(1.2rem, 2vw, 1.5rem);
+    border-radius: 12px;
+    border-left: 4px solid var(--accent-color);
+    transition: all 0.3s ease;
+}
+
+.info-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+.info-item-label {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     margin-bottom: 0.5rem;
 }
 
-.spec-value {
-    font-size: clamp(1.3rem, 3vw, 1.8rem);
+.info-item-value {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
     font-weight: 700;
     color: var(--primary-color);
 }
 
-/* ============================================
-   Parts Section
-   ============================================ */
-.parts-section {
-    padding: clamp(1.5rem, 4vw, 2.5rem);
-    border-top: 1px solid var(--border-color);
-}
-
-.parts-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(clamp(250px, 45vw, 300px), 1fr));
-    gap: clamp(1.5rem, 4vw, 2rem);
-}
-
-.part-item {
-    background: var(--bg-light);
-    padding: clamp(1.2rem, 3vw, 1.5rem);
-    border-radius: 8px;
-    border-left: 4px solid var(--primary-color);
-}
-
-.part-category {
-    font-size: 0.8rem;
-    color: var(--accent-color);
-    font-weight: 600;
-    text-transform: uppercase;
-    margin-bottom: 0.3rem;
-}
-
-.part-name {
-    font-size: clamp(1rem, 2vw, 1.1rem);
-    font-weight: 600;
-    color: var(--secondary-color);
-    margin-bottom: 0.5rem;
-}
-
-.part-description {
+.info-item-unit {
     font-size: 0.9rem;
     color: var(--text-light);
-    margin-bottom: 0;
+    font-weight: 500;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.social-link:hover {
+    background: #e55a24;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.social-link svg {
+    width: 18px;
+    height: 18px;
 }
 
 /* ============================================
-   Gallery Section
+   Modifications Section
    ============================================ */
-.gallery-section {
-    padding: clamp(1.5rem, 4vw, 2.5rem);
-    border-top: 1px solid var(--border-color);
+.modifications-section {
+    padding: clamp(2rem, 5vw, 3.5rem);
+    border-top: 2px solid var(--border-color);
 }
 
-.gallery-grid {
+.modifications-section h2 {
+    margin-bottom: 2rem;
+}
+
+.modifications-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(clamp(200px, 45vw, 280px), 1fr));
-    gap: clamp(1rem, 3vw, 1.5rem);
+    gap: clamp(1.5rem, 3vw, 2rem);
 }
 
-.gallery-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    aspect-ratio: 4 / 3;
-    background-color: var(--bg-light);
-    cursor: pointer;
-    transition: transform 0.3s ease;
+.modification-item {
+    background: var(--bg-very-light);
+    padding: clamp(1.5rem, 2.5vw, 2rem);
+    border-radius: 12px;
+    border-top: 4px solid var(--accent-color);
+    transition: all 0.3s ease;
 }
 
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+.modification-item:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
 }
 
-.gallery-item:hover img {
-    transform: scale(1.05);
-}
-
-/* ============================================
-   Owner Section
-   ============================================ */
-.owner-section {
-    padding: clamp(1.5rem, 4vw, 2.5rem);
-    border-top: 1px solid var(--border-color);
-    background: var(--bg-light);
-}
-
-.owner-info {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-}
-
-.owner-detail h3 {
-    color: var(--primary-color);
+.modification-category {
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     margin-bottom: 0.5rem;
 }
 
-.owner-detail p {
+.modification-name {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+.modification-description {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: clamp(2rem, 5vw, 3rem);
+    color: var(--text-light);
+}
+
+.empty-state-text {
+    font-size: 1rem;
     margin-bottom: 0;
 }
 
@@ -490,15 +281,16 @@ p {
     justify-content: center;
     align-items: center;
     min-height: 400px;
+    padding: 2rem;
 }
 
 .loading-spinner {
-    width: 50px;
-    height: 50px;
-    border: 4px solid var(--bg-light);
-    border-top: 4px solid var(--primary-color);
+    width: 60px;
+    height: 60px;
+    border: 4px solid var(--border-color);
+    border-top: 4px solid var(--accent-color);
     border-radius: 50%;
-    animation: spin 0.8s linear infinite;
+    animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
@@ -506,98 +298,61 @@ p {
 }
 
 .loading-error {
-    background: white;
+    background: var(--bg-light);
     padding: clamp(2rem, 5vw, 3rem);
-    border-radius: 12px;
+    border-radius: 16px;
     text-align: center;
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-lg);
+    margin-bottom: 2rem;
 }
 
 .loading-error p {
     color: var(--text-dark);
     margin-bottom: 1.5rem;
-}
-
-/* ============================================
-   Footer
-   ============================================ */
-.footer {
-    background: var(--secondary-color);
-    color: white;
-    text-align: center;
-    padding: clamp(1.5rem, 3vw, 2rem) 1rem;
-    margin-top: auto;
-}
-
-.footer p {
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 0;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 /* ============================================
    Responsive Design
    ============================================ */
 
-/* Mobile: < 768px */
 @media (max-width: 767px) {
-    .cars-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .profile-meta {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .specs-grid {
+    .profile-info-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .gallery-grid {
-        grid-template-columns: 1fr;
+    .social-links {
+        justify-content: center;
     }
 
-    .owner-info {
+    .modifications-list {
         grid-template-columns: 1fr;
     }
 }
 
-/* Tablet: 768px - 1024px */
 @media (min-width: 768px) and (max-width: 1024px) {
-    .cars-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .specs-grid {
+    .profile-info-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .gallery-grid {
+    .modifications-list {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Desktop: > 1024px */
 @media (min-width: 1025px) {
-    .cars-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .specs-grid {
+    .profile-info-grid {
         grid-template-columns: repeat(4, 1fr);
     }
 
-    .gallery-grid {
+    .modifications-list {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
 /* Print styles */
 @media print {
-    .header,
-    .footer,
-    .back-link {
+    .btn {
         display: none;
     }
 

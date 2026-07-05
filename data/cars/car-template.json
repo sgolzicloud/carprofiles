@@ -1,55 +1,43 @@
 {
   "id": "car-001",
-  "name": "My Tuned Car",
-  "year": "2020",
-  "description": "A high-performance tuned vehicle with professional modifications and upgrades.",
-  "heroImage": "/img/car-001-hero.jpg",
-  "specs": {
-    "horsepower": "450 hp",
+  "brand": "Marke",
+  "model": "Modell",
+  "subtitle": "Zusätzliche Beschreibung (optional)",
+  "yearManufactured": "2020",
+  "ownedSince": "2022",
+  "instagram": "insta_handle",
+  "performance": {
+    "ps": "450",
+    "kw": "331",
     "torque": "550 Nm",
-    "acceleration": "3.8 sec (0-100 km/h)",
-    "topSpeed": "250 km/h",
-    "engineSize": "3.0L Twin-Turbo",
-    "fuelType": "Premium Gasoline",
-    "transmission": "Automatic 8-Speed"
+    "acceleration": "3.8 Sek (0-100 km/h)",
+    "topSpeed": "250 km/h"
   },
-  "owner": {
-    "name": "Owner Name",
-    "contact": "email@example.com",
-    "location": "City, Country"
-  },
-  "parts": [
+  "modifications": [
     {
-      "category": "Engine",
-      "name": "Performance ECU Tune",
-      "description": "Custom ECU mapping for optimal performance and efficiency"
+      "category": "Motor",
+      "name": "ECU Tuning",
+      "description": "Custom ECU Mapping für optimale Leistung"
     },
     {
-      "category": "Suspension",
-      "name": "Lowering Kit",
-      "description": "Professional suspension upgrade with adjustable height"
+      "category": "Fahrwerk",
+      "name": "Tieferlegung",
+      "description": "Professionelle Federung mit verstellbarer Höhe"
     },
     {
-      "category": "Brakes",
-      "name": "Performance Brake System",
-      "description": "Carbon ceramic brake pads and upgraded brake lines"
+      "category": "Bremsanlage",
+      "name": "Performance Bremsen",
+      "description": "Keramik Bremsbeläge und verbesserte Bremsleitungen"
     },
     {
-      "category": "Exhaust",
-      "name": "Custom Exhaust",
-      "description": "Full stainless steel exhaust system with sport muffler"
+      "category": "Auspuff",
+      "name": "Sportauspuff",
+      "description": "Vollständiges Edelstahlauslass mit Sport-Schalldämpfer"
     },
     {
-      "category": "Wheels & Tires",
-      "name": "20\" Forged Wheels",
-      "description": "Lightweight forged alloy wheels with premium performance tires"
+      "category": "Räder & Reifen",
+      "name": "Schmiedefelgen",
+      "description": "Leichte Schmiedefelgen mit Premium Performance Reifen"
     }
-  ],
-  "gallery": [
-    "/img/car-001-photo-1.jpg",
-    "/img/car-001-photo-2.jpg",
-    "/img/car-001-photo-3.jpg",
-    "/img/car-001-photo-4.jpg"
-  ],
-  "lastUpdated": "2026-07-05"
+  ]
 }
