@@ -198,17 +198,28 @@ function createImageModal(imageSrc, imageAlt = '') {
 
 /**
  * Validate car profile data
+ * Supports both legacy schema and current profile schema.
  * @param {Object} carData - The car profile data
  * @returns {boolean} - True if valid, false otherwise
  */
 function isValidCarProfile(carData) {
-    const requiredFields = ['id', 'name', 'year', 'description', 'specs', 'owner'];
-    
-    for (const field of requiredFields) {
-        if (!carData[field]) {
-            console.error(`Missing required field: ${field}`);
-            return false;
-        }
+    if (!carData || typeof carData !== 'object') {
+        console.error('Invalid car profile payload');
+        return false;
+    }
+
+    // Current schema used by js/profile-loader.js
+    const hasCurrentSchema =
+        typeof carData.brand === 'string' && carData.brand.trim() !== '' &&
+        typeof carData.model === 'string' && carData.model.trim() !== '';
+
+    // Legacy schema compatibility
+    const hasLegacySchema =
+        typeof carData.name === 'string' && carData.name.trim() !== '';
+
+    if (!hasCurrentSchema && !hasLegacySchema) {
+        console.error('Missing required profile fields. Expected current schema (brand/model) or legacy schema (name).');
+        return false;
     }
 
     return true;
