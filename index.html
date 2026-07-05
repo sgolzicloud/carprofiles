@@ -61,9 +61,13 @@
             const grid = document.getElementById('cars-grid');
             
             try {
-                // Load all car profile files
-                const carIds = ['jk', 'lh']; // Add more car IDs as needed
-                
+                // Discover valid car IDs from the manifest (data/cars/index.json)
+                const indexResponse = await fetch('data/cars/index.json');
+                if (!indexResponse.ok) {
+                    throw new Error('Failed to fetch car index');
+                }
+                const carIds = await indexResponse.json();
+
                 for (const carId of carIds) {
                     try {
                         const response = await fetch(`data/cars/${carId}.json`);

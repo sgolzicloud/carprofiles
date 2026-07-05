@@ -25,7 +25,7 @@ carprofiles/
 │   └── profile-loader.js     # Profile loading and rendering
 ├── data/
 │   └── cars/
-│       ├── car-template.json # Template for new car profiles
+│       ├── index.json        # Manifest listing all valid car IDs
 │       ├── car-001.json      # Individual car profile
 │       └── ...               # More car profiles
 ├── img/                       # Car images and assets
@@ -40,7 +40,7 @@ carprofiles/
 1. **Create a new JSON file** in `data/cars/` with the format: `car-{id}.json`
    - Example: `data/cars/car-001.json`
 
-2. **Use the template** from `data/cars/car-template.json` as a reference
+2. **Add the new car ID** to `data/cars/index.json` so it is discovered by the app.
 
 3. **Fill in the car details:**
    - Basic info (name, year, description)
