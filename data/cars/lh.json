@@ -1,52 +1,43 @@
 {
   "id": "lh",
-  "name": "LH",
-  "year": "2024",
-  "description": "A high-performance tuned vehicle with professional modifications and upgrades.",
-  "heroImage": "/img/lh-hero.jpg",
-  "specs": {
-    "horsepower": "320 hp",
+  "brand": "LH",
+  "model": "Model",
+  "subtitle": "Fahrzeugbeschreibung",
+  "yearManufactured": "2024",
+  "ownedSince": "2024",
+  "instagram": "lh_profile",
+  "performance": {
+    "ps": "320",
+    "kw": "235",
     "torque": "450 Nm",
-    "acceleration": "5.2 sec (0-100 km/h)",
-    "topSpeed": "240 km/h",
-    "engineSize": "2.0L Turbocharged"
+    "acceleration": "5.2 Sek (0-100 km/h)",
+    "topSpeed": "240 km/h"
   },
-  "owner": {
-    "name": "Owner Name",
-    "contact": "contact@example.com"
-  },
-  "parts": [
+  "modifications": [
     {
-      "category": "Engine",
+      "category": "Motor",
       "name": "Performance ECU Tune",
-      "description": "Custom ECU mapping for optimal performance and efficiency"
+      "description": "Custom ECU Mapping für optimale Leistung"
     },
     {
-      "category": "Suspension",
+      "category": "Fahrwerk",
       "name": "Lowering Kit",
-      "description": "Professional suspension upgrade with adjustable height"
+      "description": "Professionelle Federung mit verstellbarer Höhe"
     },
     {
-      "category": "Brakes",
+      "category": "Bremsanlage",
       "name": "Performance Brake System",
-      "description": "Carbon ceramic brake pads and upgraded brake lines"
+      "description": "Keramik Bremsbeläge und verbesserte Bremsleitungen"
     },
     {
-      "category": "Exhaust",
+      "category": "Auspuff",
       "name": "Custom Exhaust",
-      "description": "Full stainless steel exhaust system with sport muffler"
+      "description": "Vollständiges Edelstahlauslass mit Sport-Schalldämpfer"
     },
     {
-      "category": "Wheels & Tires",
+      "category": "Räder & Reifen",
       "name": "18\" Forged Wheels",
-      "description": "Lightweight forged alloy wheels with premium performance tires"
+      "description": "Leichte Schmiedefelgen mit Premium Performance Reifen"
     }
-  ],
-  "gallery": [
-    "/img/lh-photo-1.jpg",
-    "/img/lh-photo-2.jpg",
-    "/img/lh-photo-3.jpg",
-    "/img/lh-photo-4.jpg"
-  ],
-  "lastUpdated": "2026-07-05"
+  ]
 }
