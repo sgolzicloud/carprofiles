@@ -1,0 +1,52 @@
+{
+  "id": "leonh",
+  "name": "LeonH",
+  "year": "2024",
+  "description": "A high-performance tuned vehicle with professional modifications and upgrades.",
+  "heroImage": "/img/leonh-hero.jpg",
+  "specs": {
+    "horsepower": "320 hp",
+    "torque": "450 Nm",
+    "acceleration": "5.2 sec (0-100 km/h)",
+    "topSpeed": "240 km/h",
+    "engineSize": "2.0L Turbocharged"
+  },
+  "owner": {
+    "name": "Owner Name",
+    "contact": "contact@example.com"
+  },
+  "parts": [
+    {
+      "category": "Engine",
+      "name": "Performance ECU Tune",
+      "description": "Custom ECU mapping for optimal performance and efficiency"
+    },
+    {
+      "category": "Suspension",
+      "name": "Lowering Kit",
+      "description": "Professional suspension upgrade with adjustable height"
+    },
+    {
+      "category": "Brakes",
+      "name": "Performance Brake System",
+      "description": "Carbon ceramic brake pads and upgraded brake lines"
+    },
+    {
+      "category": "Exhaust",
+      "name": "Custom Exhaust",
+      "description": "Full stainless steel exhaust system with sport muffler"
+    },
+    {
+      "category": "Wheels & Tires",
+      "name": "18\" Forged Wheels",
+      "description": "Lightweight forged alloy wheels with premium performance tires"
+    }
+  ],
+  "gallery": [
+    "/img/leonh-photo-1.jpg",
+    "/img/leonh-photo-2.jpg",
+    "/img/leonh-photo-3.jpg",
+    "/img/leonh-photo-4.jpg"
+  ],
+  "lastUpdated": "2026-07-05"
+}
