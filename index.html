@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏎️ Car Profiles - Showcase Your Tuned Vehicles</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>🏎️ Car Profiles</h1>
+            <p>Showcase your tuned vehicles with QR codes</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h2>Welcome to Car Profiles</h2>
+            <p>A responsive web application for displaying car profile details accessible via QR codes. Perfect for showcasing tuned vehicles and their modifications on mobile devices.</p>
+        </section>
+
+        <section class="cars-section">
+            <h2>Featured Cars</h2>
+            <div id="cars-grid" class="cars-grid">
+                <!-- Car cards will be loaded here -->
+            </div>
+        </section>
+
+        <section class="info-section">
+            <h2>How It Works</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>📱 Scan QR Code</h3>
+                    <p>Each car has its own unique QR code that links directly to its profile page.</p>
+                </div>
+                <div class="info-card">
+                    <h3>🖼️ View Details</h3>
+                    <p>See complete specifications, modifications, and photo galleries for each vehicle.</p>
+                </div>
+                <div class="info-card">
+                    <h3>📊 Performance Specs</h3>
+                    <p>Browse performance metrics, upgrades, and owner information.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Car Profiles. All rights reserved.</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script>
+        // Load car list on home page
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadCarsList();
+        });
+
+        async function loadCarsList() {
+            const grid = document.getElementById('cars-grid');
+            
+            try {
+                // Load all car profile files
+                const carIds = ['jk', 'lh']; // Add more car IDs as needed
+                
+                for (const carId of carIds) {
+                    try {
+                        const response = await fetch(`data/cars/${carId}.json`);
+                        if (response.ok) {
+                            const car = await response.json();
+                            const card = createCarCard(car);
+                            grid.appendChild(card);
+                        }
+                    } catch (error) {
+                        console.error(`Failed to load car ${carId}:`, error);
+                    }
+                }
+
+                if (grid.children.length === 0) {
+                    grid.innerHTML = '<p>No cars found. Please add car profiles to data/cars/</p>';
+                }
+            } catch (error) {
+                console.error('Error loading cars list:', error);
+                grid.innerHTML = '<p>Error loading car profiles.</p>';
+            }
+        }
+
+        function createCarCard(car) {
+            const card = document.createElement('div');
+            card.className = 'car-card';
+            card.innerHTML = `
+                <a href="profile.html?id=${car.id}" class="car-card-link">
+                    <div class="car-card-image" style="background-image: url('${car.heroImage}');">
+                        <span class="car-year">${car.year}</span>
+                    </div>
+                    <div class="car-card-content">
+                        <h3>${car.name}</h3>
+                        <p>${car.description}</p>
+                        <div class="car-specs">
+                            <span class="spec">⚡ ${car.specs.horsepower}</span>
+                            <span class="spec">🏁 ${car.specs.acceleration}</span>
+                        </div>
+                        <button class="btn-view">View Profile →</button>
+                    </div>
+                </a>
+            `;
+            return card;
+        }
+    </script>
+</body>
+</html>
