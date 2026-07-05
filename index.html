@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🚗 Car Profiles</title>
+    <meta
+      name="description"
+      content="Fahrzeugprofile per QR-Code – modern, mobilfreundlich und leicht erweiterbar."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <p class="eyebrow">📱 QR-Code Fahrzeugprofile</p>
+        <h1>🚗 Car Profiles</h1>
+        <p class="lead">
+          Willkommen! Hier findest du Fahrzeugprofile, die direkt per QR-Code erreichbar sind.
+          Neue Fahrzeuge können jederzeit ergänzt werden.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section aria-labelledby="fahrzeugliste-heading" class="section">
+        <div class="section-title-row">
+          <h2 id="fahrzeugliste-heading">📚 Fahrzeugliste</h2>
+          <span class="badge">1 Profil</span>
+        </div>
+
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-top">
+              <p class="card-kicker">Kürzel: <code>ms-bmw-m3-e46-2003</code></p>
+              <h3>BMW M3 E46</h3>
+              <p class="muted">Baujahr 2003 • Besitzer: MS</p>
+            </div>
+            <a class="button" href="cars/ms-bmw-m3-e46-2003.html">Profil ansehen →</a>
+          </article>
+        </div>
+      </section>
+
+      <section aria-labelledby="hinweise-heading" class="section info">
+        <h2 id="hinweise-heading">🧩 Kürzel-System</h2>
+        <p>
+          Für alle Fahrzeugseiten wird ein einheitliches Kürzel verwendet:
+          <code>&lt;initialen&gt;-&lt;marke&gt;-&lt;modell&gt;-&lt;baujahr&gt;</code>
+        </p>
+        <ul>
+          <li>Alles in <strong>Kleinbuchstaben</strong></li>
+          <li>Wörter mit <strong>Bindestrich</strong> trennen</li>
+          <li>Umlaute/Sonderzeichen vermeiden (z. B. <code>ae</code>, <code>oe</code>, <code>ue</code>)</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>✨ Erstellt für GitHub Pages • Sprache: Deutsch</p>
+      </div>
+    </footer>
+  </body>
+</html>
