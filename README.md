@@ -27,8 +27,7 @@ Eine moderne, mobile-optimierte GitHub-Pages-Webseite für Fahrzeugprofile per Q
 
 1. Repository öffnen: `Settings` → `Pages`
 2. Unter **Build and deployment**:
-   - **Source:** `Deploy from a branch`
-   - **Branch:** Standard-Branch (`main` oder `master`) + `/ (root)`
+   - **Source:** `GitHub Actions`
 3. Speichern
 4. Nach kurzer Zeit ist die Seite unter deiner Pages-URL erreichbar.
 
